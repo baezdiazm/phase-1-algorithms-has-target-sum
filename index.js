@@ -1,13 +1,26 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+
+  for (const number of array) {
+    const complement = target - number;
+    if (complement in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  Runtime: O(n^2)
+  Space: O(n)
 */
 
 /* 
   Add your pseudocode here
+  an array and a target is provided
+    grabs a pair of each element in the array and adds it
+    compares if the result is equals to the target
+    returns boolean result
 */
 
 /*
